@@ -5,6 +5,7 @@ import java.io.IOException;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.View;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -27,27 +28,13 @@ public class MainActivity extends Activity {
         return true;
     }
     
-    public void getLocation()
+    public void getLocation(View view)
     {
-    	String retJSON = "";
-    	String url = "http://api.openweathermap.org/data/2.1/find/city?lat=56.161416&lon=15.583822&cnt=1";
     	
-    	    DefaultHttpClient httpClient = new DefaultHttpClient();
-    	    HttpGet httpGet = new HttpGet(url);
-
-    	    HttpResponse httpResponse;
-			try {
-				httpResponse = httpClient.execute(httpGet);
-				retJSON = httpResponse.toString();
-			} catch (ClientProtocolException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-    	    
     	System.out.println("derp");
     	
+    	String url = "http://api.openweathermap.org/data/2.1/find/city?lat=56.161416&lon=15.583822&cnt=1";
+    	
+    	new networkTask().execute(url);
     }
 }
