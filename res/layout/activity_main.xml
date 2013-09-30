@@ -8,20 +8,52 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:onClick="getLocation"
+        android:text="@string/send_request" />
+
+    <TextView
+        android:id="@+id/txtVMessages"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnClear"
+        android:layout_alignLeft="@+id/btn"
+        android:layout_alignRight="@+id/btn"
+        android:layout_below="@+id/btn"
+        android:text="@string/txtVDefaultMassage"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="@dimen/font_size" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btnSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="151dp"
-        android:layout_toRightOf="@+id/textView1"
-        android:text="@string/send_request"
-        android:onClick="getLocation"	/>
+        android:layout_alignLeft="@+id/txtVMessages"
+        android:layout_alignParentBottom="true"
+        android:text="@string/bthGoToSettings"
+        android:textSize="@dimen/font_size_btn" />
+
+    <Button
+        android:id="@+id/btnInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/txtVMessages"
+        android:text="@string/bthGoToAbout"
+        android:textSize="@dimen/font_size_btn" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnSettings"
+        android:layout_alignLeft="@+id/btnSettings"
+        android:text="@string/btnClearMessages"
+        android:textSize="@dimen/font_size_btn" />
 
 </RelativeLayout>

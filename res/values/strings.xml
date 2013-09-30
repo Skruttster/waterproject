@@ -1,9 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">FluidApp</string>
+    <string name="app_name">Drick, din gamla skata</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="send_request">Send Request</string>
+
+    <!-- Start page -->
+    <!-- Button texts -->
+    <string name="btnClearMessages">Ränsa meddelanden</string>
+    <string name="bthGoToSettings">Inställningar</string>
+    <string name="bthGoToAbout">Mer info</string>
+    
+    
+    <string name="txtVDefaultMassage">Inga nya meddelanden</string>
+
+    <!-- Settings Page -->
+		<!-- Titles -->
+		
+	<string name="title_gender">Kön</string>
+	<string name="title_height">Längd cm</string>
+	<string name="title_weitght">Vikt kg</string>
+	<string name="title_age">Ålder</string>
+	<string name="title_medicine">Mediciner</string>
+	
+		<!-- Raio buttons -->
+	<string name="rb_man">Man</string>
+	<string name="rb_woman">Woman</string>
+		<!-- Textboxes -->
+	<string name="txtb_height">160</string>
+	<string name="txtb_weight">80</string>
+	<string name="txb_age">70</string>
+	<string name="txb_debicine">2</string>
+
+
+    <!-- About page -->
+    
+
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="btn_created_by">Skapad av</string>
+    <string name="btn_about_app">Om applikationen</string>
+    <string name="title_activity_settings">SettingsActivity</string>
 
 </resources>
