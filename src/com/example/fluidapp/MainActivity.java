@@ -4,16 +4,20 @@ import java.io.IOException;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
+
 public class MainActivity extends Activity {
 //TOP LEL TWILIGHTSSON
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,5 +40,14 @@ public class MainActivity extends Activity {
     	String url = "http://api.openweathermap.org/data/2.1/find/city?lat=56.161416&lon=15.583822&cnt=1";
     	
     	new networkTask().execute(url);
+    	
+    	setMainMessage("derp");
     }
+    
+    public void setMainMessage(String message)
+    {
+    	TextView t = (TextView)findViewById(R.id.txtVMessages);
+    	t.setText(message);
+    }
+    
 }

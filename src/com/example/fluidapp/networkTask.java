@@ -1,13 +1,19 @@
 package com.example.fluidapp;
 
+import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.net.http.AndroidHttpClient;
 import android.os.AsyncTask;
+import android.widget.TextView;
 
 
 public class networkTask extends AsyncTask<String, Void, HttpResponse> {
@@ -31,11 +37,29 @@ public class networkTask extends AsyncTask<String, Void, HttpResponse> {
         //Do something with result
         if (result != null)
 			try {
-				System.out.println(result.getEntity().getContent());
+				String resultString = "";
+				BufferedReader rd = new BufferedReader(new InputStreamReader(result.getEntity().getContent()));
+                String line = "";
+                StringBuilder sb = new StringBuilder();
+                while ((line = rd.readLine()) != null) {
+                  sb.append(line + "\n");
+                  System.out.println(line);
+                }
+                resultString = sb.toString();
+                JSONObject json = new JSONObject(resultString);
+                JSONArray listArray = json.getJSONArray("list");
+                JSONObject listObject = listArray.getJSONObject(0);
+                JSONObject mainObject= listObject.getJSONObject("main");
+                int temperature = mainObject.getInt("temp");
+                System.out.println(temperature);
+                
 			} catch (IllegalStateException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
