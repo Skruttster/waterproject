@@ -1,7 +1,6 @@
 package com.example.fluidapp;
 
 import java.io.BufferedReader;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -13,10 +12,9 @@ import org.json.JSONObject;
 
 import android.net.http.AndroidHttpClient;
 import android.os.AsyncTask;
-import android.widget.TextView;
 
+class networkTask extends AsyncTask<String, Void, HttpResponse> {
 
-public class networkTask extends AsyncTask<String, Void, HttpResponse> {
     @Override
     protected HttpResponse doInBackground(String... params) {
         String link = params[0];
@@ -52,6 +50,8 @@ public class networkTask extends AsyncTask<String, Void, HttpResponse> {
                 JSONObject mainObject= listObject.getJSONObject("main");
                 int temperature = mainObject.getInt("temp");
                 System.out.println(temperature);
+                MainActivity.textview.setText(Integer.toString(temperature - 273));
+
                 
 			} catch (IllegalStateException e) {
 				// TODO Auto-generated catch block
@@ -65,4 +65,7 @@ public class networkTask extends AsyncTask<String, Void, HttpResponse> {
 			}
         	System.out.println("asdasd");
     }
+	
+	
+	
 }
