@@ -1,25 +1,13 @@
 package com.example.fluidapp;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-import android.net.http.AndroidHttpClient;
-import android.os.AsyncTask;
-import android.os.Bundle;
 import android.app.Activity;
-import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TextView;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 
 public class MainActivity extends Activity {
@@ -28,12 +16,73 @@ public class MainActivity extends Activity {
 	public static TextView textview;
 	public GPS GPSLocation;
 	
+	
+private static final String NEW_MESSAGES = "NEW_MESSAGES";
+	
+	private String messages;
+	
+	private TextView txtVMessages;
+	
+	private Button btnSendRequest;
+	private Button btnClear;
+	private Button btnSettings;
+	private Button btnInfo;
+	
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textview = (TextView)findViewById(R.id.txtVMessages);
         GPSLocation = new GPS();
+        if(savedInstanceState == null){
+        	messages = "Inga nya meddelanden";
+        }else{
+        	messages = savedInstanceState.getString(NEW_MESSAGES);
+        }
+        
+        //txtVMessages = (TextView)findViewById(R.id.txtVMessages);
+    	
+    	btnSendRequest = (Button)findViewById(R.id.btn);
+    	btnClear = (Button)findViewById(R.id.btnClear);
+    	btnSettings = (Button)findViewById(R.id.btnSettings);
+    	btnInfo = (Button)findViewById(R.id.btnInfo);
+
+//    	Knapptryckningar
+    	btnSettings.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent nextScreen = new Intent(getApplicationContext(), SettingsActivity.class);
+				
+				startActivity(nextScreen);
+				 
+			}
+		});
+    	
+    	btnInfo.setOnClickListener(new OnClickListener() {
+    		
+    		@Override
+    		public void onClick(View v) {
+    			// TODO Auto-generated method stub
+    			Intent nextScreen = new Intent(getApplicationContext(), AboutActivity.class);
+    			
+    			startActivity(nextScreen);
+    			
+    		}
+    	});
+    	
+    	
+    	
+    	btnClear.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				txtVMessages.setText("Inga nya meddelande nu häller");
+			}
+		});
     }
 
 

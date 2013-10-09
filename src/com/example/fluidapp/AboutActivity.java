@@ -1,21 +1,77 @@
 package com.example.fluidapp;
 
-import android.os.Bundle;
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.support.v4.app.NavUtils;
-import android.annotation.TargetApi;
-import android.os.Build;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 public class AboutActivity extends Activity {
 
+	private Button btnAboutApp;
+	private Button btnCreatedBy;
+	final Context context = this;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_about);
 		// Show the Up button in the action bar.
 		setupActionBar();
+		btnAboutApp = (Button)findViewById(R.id.btn);
+		btnCreatedBy = (Button)findViewById(R.id.btnCreatedBy);
+		
+		
+		btnAboutApp.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				AlertDialog.Builder builder = new AlertDialog.Builder(context);
+				builder.setTitle("Om applikationen");
+				builder.setMessage("Tanken är att appen ska kunna vara ett stöd i vardagen för de äldre.\n" +
+						"Appen ger påminnelser om att det kan vara dags att ta ett glasvatten när det är extra varm ute, eller när användaren rört sig mycket");
+				builder.setNeutralButton("Tillbaka", new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						
+					}
+				});
+				AlertDialog alertDialog = builder.create();
+				alertDialog.show();
+			}
+		});
+		
+		btnCreatedBy.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				AlertDialog.Builder builder = new AlertDialog.Builder(context);
+				builder.setTitle("Om applikationen");
+				builder.setMessage("Skapad av de fyra BTH-studenterna: Marcus Rehn, Emil Sunesson, Daniel Bergström och Max Känngård.");
+				builder.setNeutralButton("Tillbaka", new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						
+					}
+				});
+				AlertDialog alertDialog = builder.create();
+				alertDialog.show();
+			}
+		});
 	}
 
 	/**
