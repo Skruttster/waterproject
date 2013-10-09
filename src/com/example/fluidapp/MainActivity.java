@@ -25,13 +25,15 @@ import org.json.JSONObject;
 public class MainActivity extends Activity {
 //TOP LEL TWILIGHTSSON
 	
-	public static TextView textview; 
+	public static TextView textview;
+	public GPS GPSLocation;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textview = (TextView)findViewById(R.id.txtVMessages);
+        GPSLocation = new GPS();
     }
 
 
@@ -45,9 +47,9 @@ public class MainActivity extends Activity {
     public void getLocation(View view)
     {
     	
-    	System.out.println("derp");
+    	System.out.println(GPSLocation.getLatitude());
     	
-    	String url = "http://api.openweathermap.org/data/2.1/find/city?lat=56.161416&lon=15.583822&cnt=1";
+    	String url = "http://api.openweathermap.org/data/2.1/find/city?lat=" + Double.toString(GPSLocation.getLatitude()) + "&lon=" + Double.toString(GPSLocation.getLongitude()) + "&cnt=1";
     	
     	new networkTask().execute(url);
     	
