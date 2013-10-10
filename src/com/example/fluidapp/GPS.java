@@ -31,6 +31,8 @@ protected void onCreate(Bundle savedInstanceState) {
 
     LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
     locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+    
+
 }
 
 @Override

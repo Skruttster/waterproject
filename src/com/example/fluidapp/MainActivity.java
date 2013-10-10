@@ -97,6 +97,7 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
     {
     	
     	System.out.println(GPSLocation.getLatitude());
+    	System.out.println(GPSLocation.getLongitude());
     	
     	String url = "http://api.openweathermap.org/data/2.1/find/city?lat=" + Double.toString(GPSLocation.getLatitude()) + "&lon=" + Double.toString(GPSLocation.getLongitude()) + "&cnt=1";
     	
