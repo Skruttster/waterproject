@@ -8,7 +8,7 @@
 
     <!-- Start page -->
     <!-- Button texts -->
-    <string name="btnClearMessages">Ränsa meddelanden</string>
+    <string name="btnClearMessages">Rensa meddelanden</string>
     <string name="bthGoToSettings">Inställningar</string>
     <string name="bthGoToAbout">Mer info</string>
     
@@ -37,9 +37,11 @@
     <!-- About page -->
     
 
-    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_about">Mer information</string>
+    
     <string name="btn_created_by">Skapad av</string>
     <string name="btn_about_app">Om applikationen</string>
-    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="btn_health_tips">Hälsotips</string>
+    <string name="title_activity_settings">Inställningar</string>
 
 </resources>

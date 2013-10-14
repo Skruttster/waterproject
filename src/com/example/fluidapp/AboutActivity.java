@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -18,6 +20,7 @@ public class AboutActivity extends Activity {
 
 	private Button btnAboutApp;
 	private Button btnCreatedBy;
+	private Button btnMoreInfo;
 	final Context context = this;
 	
 	@Override
@@ -28,6 +31,7 @@ public class AboutActivity extends Activity {
 		setupActionBar();
 		btnAboutApp = (Button)findViewById(R.id.btn);
 		btnCreatedBy = (Button)findViewById(R.id.btnCreatedBy);
+		btnMoreInfo = (Button)findViewById(R.id.bthMoreInfo);
 		
 		
 		btnAboutApp.setOnClickListener(new OnClickListener() {
@@ -70,6 +74,14 @@ public class AboutActivity extends Activity {
 				});
 				AlertDialog alertDialog = builder.create();
 				alertDialog.show();
+			}
+		});
+		btnMoreInfo.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent("android.intent.action.VIEW", Uri.parse("https://www.karlskrona.se/sv/Familj--omsorg/Aldre/Maltider/Energibehov/"));
+				startActivity(intent);
 			}
 		});
 	}

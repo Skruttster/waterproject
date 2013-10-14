@@ -6,6 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:scrollbars="vertical"
     tools:context=".AboutActivity" >
 
     <Button
@@ -14,7 +15,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="@string/btn_about_app" />
+        android:text="@string/btn_about_app"
+        android:textSize="@dimen/font_size_btn" />
 
     <Button
         android:id="@+id/btnCreatedBy"
@@ -22,6 +24,17 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/btn"
         android:layout_below="@+id/btn"
-        android:text="@string/btn_created_by" />
+        android:text="@string/btn_created_by"
+        android:textSize="@dimen/font_size_btn" />
+
+    <Button
+        android:id="@+id/bthMoreInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnCreatedBy"
+        android:layout_alignRight="@+id/btnCreatedBy"
+        android:layout_below="@+id/btnCreatedBy"
+        android:text="@string/btn_health_tips"
+        android:textSize="@dimen/font_size_btn" />
 
 </RelativeLayout>

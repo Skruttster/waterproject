@@ -27,24 +27,24 @@ public final class R {
     }
     public static final class id {
         public static final int action_settings=0x7f080012;
+        public static final int bthMoreInfo=0x7f080002;
         public static final int btn=0x7f080000;
-        public static final int btnClear=0x7f080003;
+        public static final int btnClear=0x7f080004;
         public static final int btnCreatedBy=0x7f080001;
-        public static final int btnInfo=0x7f080005;
-        public static final int btnSettings=0x7f080004;
-        public static final int button1=0x7f080009;
+        public static final int btnInfo=0x7f080006;
+        public static final int btnSettings=0x7f080005;
         public static final int editText1=0x7f080010;
         public static final int editText2=0x7f08000e;
         public static final int editText3=0x7f08000c;
         public static final int editText4=0x7f08000a;
-        public static final int radioGroup1=0x7f080006;
-        public static final int rbWoman=0x7f080007;
-        public static final int rmMan=0x7f080008;
+        public static final int radioGroup1=0x7f080007;
+        public static final int rbWoman=0x7f080008;
+        public static final int rmMan=0x7f080009;
         public static final int textView1=0x7f080011;
         public static final int textView2=0x7f08000f;
         public static final int textView3=0x7f08000d;
         public static final int textView4=0x7f08000b;
-        public static final int txtVMessages=0x7f080002;
+        public static final int txtVMessages=0x7f080003;
     }
     public static final class layout {
         public static final int activity_about=0x7f030000;
@@ -67,6 +67,7 @@ public final class R {
         public static final int btnClearMessages=0x7f050004;
         public static final int btn_about_app=0x7f050015;
         public static final int btn_created_by=0x7f050014;
+        public static final int btn_health_tips=0x7f050016;
         public static final int hello_world=0x7f050002;
         /**  Raio buttons 
          */
@@ -76,7 +77,7 @@ public final class R {
         /**  About page 
          */
         public static final int title_activity_about=0x7f050013;
-        public static final int title_activity_settings=0x7f050016;
+        public static final int title_activity_settings=0x7f050017;
         public static final int title_age=0x7f05000b;
         /**  Settings Page 
  Titles 

@@ -31,7 +31,7 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/bthMoreInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/editText4"
@@ -43,7 +43,7 @@
         android:id="@+id/editText4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
+        android:layout_above="@+id/bthMoreInfo"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="14dp"
         android:ems="10"
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/editText4"
         android:layout_alignLeft="@+id/editText4"
-        android:text="TextView"
+        android:text="@string/title_medicine"
         android:textSize="@dimen/font_size" />
 
     <EditText
