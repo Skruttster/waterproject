@@ -14,7 +14,7 @@ public class MainActivity extends Activity {
 //TOP LEL TWILIGHTSSON
 	
 	public static TextView textview;
-	public GPS GPSLocation;
+	public GPSTracker GPSLocation;
 	
 	
 private static final String NEW_MESSAGES = "NEW_MESSAGES";
@@ -34,7 +34,7 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textview = (TextView)findViewById(R.id.txtVMessages);
-        GPSLocation = new GPS();
+        GPSLocation = new GPSTracker(this);
         if(savedInstanceState == null){
         	messages = "Inga nya meddelanden";
         }else{
