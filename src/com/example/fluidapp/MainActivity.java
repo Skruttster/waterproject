@@ -1,6 +1,11 @@
 package com.example.fluidapp;
 
+import java.util.Calendar;
+
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -47,6 +52,8 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
     	btnClear = (Button)findViewById(R.id.btnClear);
     	btnSettings = (Button)findViewById(R.id.btnSettings);
     	btnInfo = (Button)findViewById(R.id.btnInfo);
+    	
+    	alarmManager();
 
 //    	Knapptryckningar
     	btnSettings.setOnClickListener(new OnClickListener() {
@@ -83,6 +90,7 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
 				txtVMessages.setText("Inga nya meddelande nu häller");
 			}
 		});
+    	
     }
 
 
@@ -109,6 +117,32 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
     {
     	TextView t = (TextView)findViewById(R.id.txtVMessages);
     	t.setText(message);
+    }
+    
+    private void alarmManager()
+    {
+    	//Create alarm manager
+    	AlarmManager alarmMgr0 = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+
+    	//Create pending intent & register it to your alarm notifier class
+    	Intent intent0 = new Intent(this, AlarmReminder.class);
+    	PendingIntent pendingIntent0 = PendingIntent.getBroadcast(this, 0, intent0, 0);
+
+    	//set timer you want alarm to work (here I have set it to 7.20pm)
+    	//Calendar timeOff9 = Calendar.getInstance();
+    	//timeOff9.set(Calendar.HOUR_OF_DAY, Calendar.HOUR_OF_DAY);
+    	//timeOff9.set(Calendar.MINUTE, Calendar.MINUTE);
+    	//timeOff9.set(Calendar.SECOND, Calendar.SECOND);
+    	
+    	Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        System.out.println(System.currentTimeMillis());
+        
+        alarmMgr0.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 10*1000, pendingIntent0);
+        
+    	//set that timer as a RTC Wakeup to alarm manager object
+    	//alarmMgr0.set(AlarmManager.RTC_WAKEUP, timeOff9.getTimeInMillis(), pendingIntent0);
+    	
     }
     
 }

@@ -17,34 +17,34 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
-        public static final int font_size=0x7f040002;
-        public static final int font_size_btn=0x7f040003;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
+        public static final int font_size=0x7f050002;
+        public static final int font_size_btn=0x7f050003;
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080012;
-        public static final int bthMoreInfo=0x7f080002;
-        public static final int btn=0x7f080000;
-        public static final int btnClear=0x7f080004;
-        public static final int btnCreatedBy=0x7f080001;
-        public static final int btnInfo=0x7f080006;
-        public static final int btnSettings=0x7f080005;
-        public static final int editText1=0x7f080010;
-        public static final int editText2=0x7f08000e;
-        public static final int editText3=0x7f08000c;
-        public static final int editText4=0x7f08000a;
-        public static final int radioGroup1=0x7f080007;
-        public static final int rbWoman=0x7f080008;
-        public static final int rmMan=0x7f080009;
-        public static final int textView1=0x7f080011;
-        public static final int textView2=0x7f08000f;
-        public static final int textView3=0x7f08000d;
-        public static final int textView4=0x7f08000b;
-        public static final int txtVMessages=0x7f080003;
+        public static final int action_settings=0x7f090012;
+        public static final int bthMoreInfo=0x7f090002;
+        public static final int btn=0x7f090000;
+        public static final int btnClear=0x7f090004;
+        public static final int btnCreatedBy=0x7f090001;
+        public static final int btnInfo=0x7f090006;
+        public static final int btnSettings=0x7f090005;
+        public static final int editText1=0x7f090010;
+        public static final int editText2=0x7f09000e;
+        public static final int editText3=0x7f09000c;
+        public static final int editText4=0x7f09000a;
+        public static final int radioGroup1=0x7f090007;
+        public static final int rbWoman=0x7f090008;
+        public static final int rmMan=0x7f090009;
+        public static final int textView1=0x7f090011;
+        public static final int textView2=0x7f09000f;
+        public static final int textView3=0x7f09000d;
+        public static final int textView4=0x7f09000b;
+        public static final int txtVMessages=0x7f090003;
     }
     public static final class layout {
         public static final int activity_about=0x7f030000;
@@ -52,47 +52,50 @@ public final class R {
         public static final int activity_settings=0x7f030002;
     }
     public static final class menu {
-        public static final int about=0x7f070000;
-        public static final int main=0x7f070001;
-        public static final int settings=0x7f070002;
+        public static final int about=0x7f080000;
+        public static final int main=0x7f080001;
+        public static final int settings=0x7f080002;
+    }
+    public static final class raw {
+        public static final int alarm0=0x7f040000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050001;
-        public static final int app_name=0x7f050000;
-        public static final int bthGoToAbout=0x7f050006;
-        public static final int bthGoToSettings=0x7f050005;
+        public static final int action_settings=0x7f060001;
+        public static final int app_name=0x7f060000;
+        public static final int bthGoToAbout=0x7f060006;
+        public static final int bthGoToSettings=0x7f060005;
         /**  Start page 
  Button texts 
          */
-        public static final int btnClearMessages=0x7f050004;
-        public static final int btn_about_app=0x7f050015;
-        public static final int btn_created_by=0x7f050014;
-        public static final int btn_health_tips=0x7f050016;
-        public static final int hello_world=0x7f050002;
+        public static final int btnClearMessages=0x7f060004;
+        public static final int btn_about_app=0x7f060015;
+        public static final int btn_created_by=0x7f060014;
+        public static final int btn_health_tips=0x7f060016;
+        public static final int hello_world=0x7f060002;
         /**  Raio buttons 
          */
-        public static final int rb_man=0x7f05000d;
-        public static final int rb_woman=0x7f05000e;
-        public static final int send_request=0x7f050003;
+        public static final int rb_man=0x7f06000d;
+        public static final int rb_woman=0x7f06000e;
+        public static final int send_request=0x7f060003;
         /**  About page 
          */
-        public static final int title_activity_about=0x7f050013;
-        public static final int title_activity_settings=0x7f050017;
-        public static final int title_age=0x7f05000b;
+        public static final int title_activity_about=0x7f060013;
+        public static final int title_activity_settings=0x7f060017;
+        public static final int title_age=0x7f06000b;
         /**  Settings Page 
  Titles 
          */
-        public static final int title_gender=0x7f050008;
-        public static final int title_height=0x7f050009;
-        public static final int title_medicine=0x7f05000c;
-        public static final int title_weitght=0x7f05000a;
-        public static final int txb_age=0x7f050011;
-        public static final int txb_debicine=0x7f050012;
-        public static final int txtVDefaultMassage=0x7f050007;
+        public static final int title_gender=0x7f060008;
+        public static final int title_height=0x7f060009;
+        public static final int title_medicine=0x7f06000c;
+        public static final int title_weitght=0x7f06000a;
+        public static final int txb_age=0x7f060011;
+        public static final int txb_debicine=0x7f060012;
+        public static final int txtVDefaultMassage=0x7f060007;
         /**  Textboxes 
          */
-        public static final int txtb_height=0x7f05000f;
-        public static final int txtb_weight=0x7f050010;
+        public static final int txtb_height=0x7f06000f;
+        public static final int txtb_weight=0x7f060010;
     }
     public static final class style {
         /** 
@@ -116,10 +119,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f070001;
     }
 }
