@@ -8,6 +8,7 @@
 
     <!-- Start page -->
     <!-- Button texts -->
+    <string name="btnFever">Feber</string>
     <string name="btnClearMessages">Rensa meddelanden</string>
     <string name="bthGoToSettings">Inställningar</string>
     <string name="bthGoToAbout">Mer info</string>
@@ -22,16 +23,18 @@
 	<string name="title_height">Längd cm</string>
 	<string name="title_weitght">Vikt kg</string>
 	<string name="title_age">Ålder</string>
-	<string name="title_medicine">Mediciner</string>
+	<string name="title_medicine">Extra vatten pga medicin(cl)</string>
 	
 		<!-- Raio buttons -->
 	<string name="rb_man">Man</string>
-	<string name="rb_woman">Woman</string>
+	<string name="rb_woman">Kvinna</string>
 		<!-- Textboxes -->
 	<string name="txtb_height">160</string>
 	<string name="txtb_weight">80</string>
 	<string name="txb_age">70</string>
 	<string name="txb_debicine">2</string>
+	
+	<string name="btn_save_settings">Spara ändringar</string>
 
 
     <!-- About page -->

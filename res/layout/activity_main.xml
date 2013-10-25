@@ -8,15 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <Button
-        android:id="@+id/btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:onClick="getLocation"
-        android:text="@string/send_request" />
-
     <TextView
         android:id="@+id/txtVMessages"
         android:layout_width="wrap_content"
@@ -54,6 +45,26 @@
         android:layout_above="@+id/btnSettings"
         android:layout_alignLeft="@+id/btnSettings"
         android:text="@string/btnClearMessages"
+        android:textSize="@dimen/font_size_btn" />
+
+    <Button
+        android:id="@+id/btnFever"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/btnFever"
+        android:textSize="@dimen/font_size_btn" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnFever"
+        android:layout_centerHorizontal="true"
+        android:onClick="getLocation"
+        android:text="@string/send_request"
         android:textSize="@dimen/font_size_btn" />
 
 </RelativeLayout>

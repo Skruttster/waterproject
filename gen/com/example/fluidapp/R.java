@@ -26,25 +26,23 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f090012;
+        public static final int action_settings=0x7f090010;
         public static final int bthMoreInfo=0x7f090002;
         public static final int btn=0x7f090000;
         public static final int btnClear=0x7f090004;
         public static final int btnCreatedBy=0x7f090001;
+        public static final int btnFever=0x7f090007;
         public static final int btnInfo=0x7f090006;
+        public static final int btnSaveSettings=0x7f09000b;
         public static final int btnSettings=0x7f090005;
-        public static final int editText1=0x7f090010;
-        public static final int editText2=0x7f09000e;
-        public static final int editText3=0x7f09000c;
-        public static final int editText4=0x7f09000a;
-        public static final int radioGroup1=0x7f090007;
-        public static final int rbWoman=0x7f090008;
-        public static final int rmMan=0x7f090009;
-        public static final int textView1=0x7f090011;
-        public static final int textView2=0x7f09000f;
-        public static final int textView3=0x7f09000d;
-        public static final int textView4=0x7f09000b;
+        public static final int eTxtExtraWater=0x7f09000f;
+        public static final int eTxtWeight=0x7f09000d;
+        public static final int radioGroup1=0x7f090008;
+        public static final int rbMan=0x7f09000a;
+        public static final int rbWoman=0x7f090009;
+        public static final int txtVExtrawater=0x7f09000e;
         public static final int txtVMessages=0x7f090003;
+        public static final int txtVWeight=0x7f09000c;
     }
     public static final class layout {
         public static final int activity_about=0x7f030000;
@@ -62,40 +60,42 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
-        public static final int bthGoToAbout=0x7f060006;
-        public static final int bthGoToSettings=0x7f060005;
+        public static final int bthGoToAbout=0x7f060007;
+        public static final int bthGoToSettings=0x7f060006;
+        public static final int btnClearMessages=0x7f060005;
         /**  Start page 
  Button texts 
          */
-        public static final int btnClearMessages=0x7f060004;
-        public static final int btn_about_app=0x7f060015;
-        public static final int btn_created_by=0x7f060014;
-        public static final int btn_health_tips=0x7f060016;
+        public static final int btnFever=0x7f060004;
+        public static final int btn_about_app=0x7f060017;
+        public static final int btn_created_by=0x7f060016;
+        public static final int btn_health_tips=0x7f060018;
+        public static final int btn_save_settings=0x7f060014;
         public static final int hello_world=0x7f060002;
         /**  Raio buttons 
          */
-        public static final int rb_man=0x7f06000d;
-        public static final int rb_woman=0x7f06000e;
+        public static final int rb_man=0x7f06000e;
+        public static final int rb_woman=0x7f06000f;
         public static final int send_request=0x7f060003;
         /**  About page 
          */
-        public static final int title_activity_about=0x7f060013;
-        public static final int title_activity_settings=0x7f060017;
-        public static final int title_age=0x7f06000b;
+        public static final int title_activity_about=0x7f060015;
+        public static final int title_activity_settings=0x7f060019;
+        public static final int title_age=0x7f06000c;
         /**  Settings Page 
  Titles 
          */
-        public static final int title_gender=0x7f060008;
-        public static final int title_height=0x7f060009;
-        public static final int title_medicine=0x7f06000c;
-        public static final int title_weitght=0x7f06000a;
-        public static final int txb_age=0x7f060011;
-        public static final int txb_debicine=0x7f060012;
-        public static final int txtVDefaultMassage=0x7f060007;
+        public static final int title_gender=0x7f060009;
+        public static final int title_height=0x7f06000a;
+        public static final int title_medicine=0x7f06000d;
+        public static final int title_weitght=0x7f06000b;
+        public static final int txb_age=0x7f060012;
+        public static final int txb_debicine=0x7f060013;
+        public static final int txtVDefaultMassage=0x7f060008;
         /**  Textboxes 
          */
-        public static final int txtb_height=0x7f06000f;
-        public static final int txtb_weight=0x7f060010;
+        public static final int txtb_height=0x7f060010;
+        public static final int txtb_weight=0x7f060011;
     }
     public static final class style {
         /** 

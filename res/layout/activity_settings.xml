@@ -19,106 +19,67 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="26dp"
+            android:layout_weight="1.05"
             android:text="@string/rb_woman"
             android:textSize="@dimen/font_size" />
 
         <RadioButton
-            android:id="@+id/rmMan"
+            android:id="@+id/rbMan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="2.61"
             android:text="@string/rb_man"
             android:textSize="@dimen/font_size" />
+
     </RadioGroup>
 
     <Button
-        android:id="@+id/bthMoreInfo"
+        android:id="@+id/btnSaveSettings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText4"
         android:layout_alignParentBottom="true"
-        android:text="@string/hello_world"
+        android:text="@string/btn_save_settings"
         android:textSize="@dimen/font_size_btn" />
 
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/bthMoreInfo"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="14dp"
-        android:ems="10"
-        android:text="@string/txb_age"
-        android:textSize="@dimen/font_size" />
-
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/txtVWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/editText4"
-        android:layout_alignLeft="@+id/editText4"
-        android:text="@string/title_medicine"
-        android:textSize="@dimen/font_size" />
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView4"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="15dp"
-        android:ems="10"
-        android:text="@string/txb_age"
-        android:textSize="@dimen/font_size" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_centerVertical="true"
-        android:text="@string/title_age"
-        android:textSize="@dimen/font_size" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView3"
-        android:layout_alignParentRight="true"
-        android:ems="10"
-        android:text="@string/txtb_weight"
-        android:textSize="@dimen/font_size" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/editText2"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_marginBottom="14dp"
+        android:layout_alignLeft="@+id/radioGroup1"
+        android:layout_below="@+id/radioGroup1"
         android:text="@string/title_weitght"
         android:textSize="@dimen/font_size" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/eTxtWeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView2"
-        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignLeft="@+id/txtVWeight"
+        android:layout_below="@+id/txtVWeight"
         android:ems="10"
-        android:text="@string/txtb_height"
+        android:inputType="number"
+        android:textSize="@dimen/font_size" />
+
+    <TextView
+        android:id="@+id/txtVExtrawater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/eTxtWeight"
+        android:layout_below="@+id/eTxtWeight"
+        android:text="@string/title_medicine"
+        android:textSize="@dimen/font_size" />
+
+    <EditText
+        android:id="@+id/eTxtExtraWater"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtVExtrawater"
+        android:ems="10"
+        android:inputType="number"
         android:textSize="@dimen/font_size" >
 
         <requestFocus />
     </EditText>
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_below="@+id/radioGroup1"
-        android:text="@string/title_height"
-        android:textSize="@dimen/font_size" />
 
 </RelativeLayout>
