@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 
-import android.R.string;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
@@ -65,7 +64,7 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
     	btnSettings = (Button)findViewById(R.id.btnSettings);
     	btnInfo = (Button)findViewById(R.id.btnInfo);
     	
-    	alarmManager();
+
 
 //    	Knapptryckningar
     	btnFever.setOnClickListener(new OnClickListener() {
@@ -194,7 +193,7 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
     
     public void getLocation(View view)
     {
-    	
+    	alarmManager();
     	System.out.println(GPSLocation.getLatitude());
     	System.out.println(GPSLocation.getLongitude());
     	
@@ -216,8 +215,8 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
     	AlarmManager alarmMgr0 = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
 
     	//Create pending intent & register it to your alarm notifier class
-    	Intent intent0 = new Intent(this, AlarmReminder.class);
-    	PendingIntent pendingIntent0 = PendingIntent.getBroadcast(this, 0, intent0, 0);
+    	Intent intent0 = new Intent(MainActivity.this, AlarmReminder.class);
+    	PendingIntent pendingIntent0 = PendingIntent.getActivity(MainActivity.this, 0, intent0, PendingIntent.FLAG_CANCEL_CURRENT);
 
     	//set timer you want alarm to work (here I have set it to 7.20pm)
     	//Calendar timeOff9 = Calendar.getInstance();
@@ -229,12 +228,15 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
         calendar.setTimeInMillis(System.currentTimeMillis());
         System.out.println(System.currentTimeMillis());
         
-        alarmMgr0.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 100*1000, pendingIntent0);
+        alarmMgr0.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent0);
+        
         
     	//set that timer as a RTC Wakeup to alarm manager object
     	//alarmMgr0.set(AlarmManager.RTC_WAKEUP, timeOff9.getTimeInMillis(), pendingIntent0);
     	
     }
+    
+    
     
 }
 

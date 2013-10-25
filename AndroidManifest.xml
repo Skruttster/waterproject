@@ -43,7 +43,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.fluidapp.MainActivity" />
         </activity>
-        <receiver android:name="AlarmReminder" >
-        </receiver>
+        <activity android:name=".AlarmReminder"></activity>
     </application>
 </manifest>

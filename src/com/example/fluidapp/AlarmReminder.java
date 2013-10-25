@@ -1,5 +1,6 @@
 package com.example.fluidapp;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -7,28 +8,32 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
-public class AlarmReminder extends BroadcastReceiver{
+public class AlarmReminder extends Activity{
 
+	
 	@Override
-	public void onReceive(Context context, Intent intent) {
-		// TODO Auto-generated method stub
-		System.out.println("I are alarm!");
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 		
-		MediaPlayer mPlayer = MediaPlayer.create(context, R.raw.alarm0);
-		
-		AlertDialog.Builder builder = new AlertDialog.Builder(context);
-		builder.setTitle("Drick");
-		builder.setNeutralButton("OK", new OnClickListener() {
+			setContentView(R.layout.alarm);
 			
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				// TODO Auto-generated method stub
-				
-			}
-		});
-		
-		mPlayer.start();
+			final MediaPlayer mPlayer = MediaPlayer.create(this, R.raw.alarm0);
+			mPlayer.start();
+			
+			Button stopAlarm = (Button) findViewById(R.id.btnStopAlarm);
+			stopAlarm.setOnClickListener(new Button.OnClickListener() {  
+		        public void onClick(View v)
+		            {
+		                finish();
+		                mPlayer.stop();
+		            }
+		         });
+			
+			
 	}
 	
 		
