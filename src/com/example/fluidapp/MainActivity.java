@@ -55,6 +55,10 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
         	messages = savedInstanceState.getString(NEW_MESSAGES);
         }
         
+        
+        //Aktivera alarm
+        alarmManager();
+        
         //txtVMessages = (TextView)findViewById(R.id.txtVMessages);
         
         
@@ -193,7 +197,6 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
     
     public void getLocation(View view)
     {
-    	alarmManager();
     	System.out.println(GPSLocation.getLatitude());
     	System.out.println(GPSLocation.getLongitude());
     	
@@ -213,26 +216,40 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
     {
     	//Create alarm manager
     	AlarmManager alarmMgr0 = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+    	AlarmManager alarmMgr1 = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+    	AlarmManager alarmMgr2 = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
 
     	//Create pending intent & register it to your alarm notifier class
     	Intent intent0 = new Intent(MainActivity.this, AlarmReminder.class);
     	PendingIntent pendingIntent0 = PendingIntent.getActivity(MainActivity.this, 0, intent0, PendingIntent.FLAG_CANCEL_CURRENT);
-
-    	//set timer you want alarm to work (here I have set it to 7.20pm)
-    	//Calendar timeOff9 = Calendar.getInstance();
-    	//timeOff9.set(Calendar.HOUR_OF_DAY, Calendar.HOUR_OF_DAY);
-    	//timeOff9.set(Calendar.MINUTE, Calendar.MINUTE);
-    	//timeOff9.set(Calendar.SECOND, Calendar.SECOND);
     	
-    	Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(System.currentTimeMillis());
-        System.out.println(System.currentTimeMillis());
+    	Intent intent1 = new Intent(MainActivity.this, AlarmReminder.class);
+    	PendingIntent pendingIntent1 = PendingIntent.getActivity(MainActivity.this, 1, intent1, PendingIntent.FLAG_CANCEL_CURRENT);
+    	
+    	Intent intent2 = new Intent(MainActivity.this, AlarmReminder.class);
+    	PendingIntent pendingIntent2 = PendingIntent.getActivity(MainActivity.this, 2, intent2, PendingIntent.FLAG_CANCEL_CURRENT);
+
+    	Calendar timeOff11 = Calendar.getInstance();
+    	timeOff11.set(Calendar.HOUR_OF_DAY, 11);
+    	timeOff11.set(Calendar.MINUTE, 00);
+    	timeOff11.set(Calendar.SECOND, 30);
+    	
+    	Calendar timeOff15 = Calendar.getInstance();
+    	timeOff15.set(Calendar.HOUR_OF_DAY, 15);
+    	timeOff15.set(Calendar.MINUTE, 00);
+    	timeOff15.set(Calendar.SECOND, 30);
+    	
+    	Calendar timeOff18 = Calendar.getInstance();
+    	timeOff18.set(Calendar.HOUR_OF_DAY, 18);
+    	timeOff18.set(Calendar.MINUTE, 00);
+    	timeOff18.set(Calendar.SECOND, 30);
         
-        alarmMgr0.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent0);
+        alarmMgr0.set(AlarmManager.RTC_WAKEUP, timeOff11.getTimeInMillis(), pendingIntent0);
+        alarmMgr1.set(AlarmManager.RTC_WAKEUP, timeOff15.getTimeInMillis(), pendingIntent1);
+        alarmMgr2.set(AlarmManager.RTC_WAKEUP, timeOff18.getTimeInMillis(), pendingIntent2);
         
         
-    	//set that timer as a RTC Wakeup to alarm manager object
-    	//alarmMgr0.set(AlarmManager.RTC_WAKEUP, timeOff9.getTimeInMillis(), pendingIntent0);
+
     	
     }
     

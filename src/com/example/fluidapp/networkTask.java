@@ -50,7 +50,7 @@ class networkTask extends AsyncTask<String, Void, HttpResponse> {
                 JSONObject mainObject= listObject.getJSONObject("main");
                 int temperature = mainObject.getInt("temp");
                 System.out.println(temperature);
-                MainActivity.textview.setText(Integer.toString(temperature - 273));
+                MainActivity.textview.setText("Temperaturen ute är " + Integer.toString(temperature - 273) + "°C");
 
                 
 			} catch (IllegalStateException e) {

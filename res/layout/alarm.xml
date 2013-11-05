@@ -3,10 +3,20 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_gravity="center">
-    <Button android:id="@+id/btnStopAlarm"
+    android:layout_gravity="center"
+    android:layout_centerHorizontal="true">
+
+    <TextView
+        android:id="@+id/txtVMessages"
         android:layout_width="wrap_content"
-    	android:layout_height="wrap_content"
-    	android:text="Stop Alarm" />
+        android:layout_height="match_parent"
+        android:text="@string/alarm_message"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <Button
+        android:id="@+id/btnStopAlarm"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_alarm" />
 
 </LinearLayout>

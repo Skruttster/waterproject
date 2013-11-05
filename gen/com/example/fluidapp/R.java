@@ -61,6 +61,9 @@ public final class R {
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
+        /**  Alarm page 
+         */
+        public static final int alarm_message=0x7f06001a;
         public static final int app_name=0x7f060000;
         public static final int bthGoToAbout=0x7f060007;
         public static final int bthGoToSettings=0x7f060006;
@@ -70,6 +73,7 @@ public final class R {
          */
         public static final int btnFever=0x7f060004;
         public static final int btn_about_app=0x7f060017;
+        public static final int btn_alarm=0x7f06001b;
         public static final int btn_created_by=0x7f060016;
         public static final int btn_health_tips=0x7f060018;
         public static final int btn_save_settings=0x7f060014;
