@@ -41,8 +41,8 @@ public class AboutActivity extends Activity {
 				// TODO Auto-generated method stub
 				AlertDialog.Builder builder = new AlertDialog.Builder(context);
 				builder.setTitle("Om applikationen");
-				builder.setMessage("Tanken Ã¤r att appen ska kunna vara ett stÃ¶d i vardagen fÃ¶r de Ã¤ldre.\n" +
-						"Appen ger pÃ¥minnelser om att det kan vara dags att ta ett glasvatten nÃ¤r det Ã¤r extra varm ute, eller nÃ¤r anvÃ¤ndaren rÃ¶rt sig mycket");
+				builder.setMessage("Tanken är att appen ska kunna vara ett stöd i vardagen för de äldre.\n" +
+						"Appen ger påminnelser om att det kan vara dags att ta ett glasvatten när det är extra varm ute, eller när användaren rört sig mycket");
 				builder.setNeutralButton("Tillbaka", new DialogInterface.OnClickListener() {
 					
 					@Override
@@ -63,7 +63,7 @@ public class AboutActivity extends Activity {
 				// TODO Auto-generated method stub
 				AlertDialog.Builder builder = new AlertDialog.Builder(context);
 				builder.setTitle("Om applikationen");
-				builder.setMessage("Skapad av de fyra BTH-studenterna: Marcus Rehn, Emil Sunesson, Daniel BergstrÃ¶m och Max KÃ¤nngÃ¥rd.");
+				builder.setMessage("Skapad av de fyra BTH-studenterna: Marcus Rehn, Emil Sunesson, Daniel Bergström och Max Känngård.");
 				builder.setNeutralButton("Tillbaka", new DialogInterface.OnClickListener() {
 					
 					@Override

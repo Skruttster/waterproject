@@ -31,7 +31,8 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
 	
 	private String messages;
 	
-	private TextView txtVMessages;
+	private TextView txtVM;
+	
 	
 	private Button btnFever;
 	private Button btnSendRequest;
@@ -48,6 +49,7 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textview = (TextView)findViewById(R.id.txtVMessages);
+        txtVM = (TextView)findViewById(R.id.textViewAmount);
         GPSLocation = new GPSTracker(this);
         if(savedInstanceState == null){
         	messages = "Inga nya meddelanden";
@@ -64,7 +66,7 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
         
     	btnFever = (Button)findViewById(R.id.btnFever);
     	btnSendRequest = (Button)findViewById(R.id.btn);
-    	btnClear = (Button)findViewById(R.id.btnClear);
+    	//btnClear = (Button)findViewById(R.id.btnClear);
     	btnSettings = (Button)findViewById(R.id.btnSettings);
     	btnInfo = (Button)findViewById(R.id.btnInfo);
     	
@@ -90,27 +92,27 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
 							
 							hashMap.put("fever", "1");
 							dbTools.updateUserFever(hashMap);
-							Toast.makeText(getApplicationContext(), "Din feber är noterad", Toast.LENGTH_LONG).show();
+							Toast.makeText(getApplicationContext(), "Din feber �r noterad", Toast.LENGTH_LONG).show();
 							break;
 						case 1:
 							hashMap.put("fever", "2");
 							dbTools.updateUserFever(hashMap);
-							Toast.makeText(getApplicationContext(), "Din feber är noterad.", Toast.LENGTH_LONG).show();
+							Toast.makeText(getApplicationContext(), "Din feber �r noterad.", Toast.LENGTH_LONG).show();
 							break;
 						case 2:
 							hashMap.put("fever", "3");
 							dbTools.updateUserFever(hashMap);
-							Toast.makeText(getApplicationContext(), "Hög feber, uppsök läkare", Toast.LENGTH_LONG).show();
+							Toast.makeText(getApplicationContext(), "H�g feber, upps�k l�kare", Toast.LENGTH_LONG).show();
 							break;
 						case 3:
 							hashMap.put("fever", "4");
 							dbTools.updateUserFever(hashMap);
-							Toast.makeText(getApplicationContext(), "Hög feber, uppsök läkare", Toast.LENGTH_LONG).show();
+							Toast.makeText(getApplicationContext(), "H�g feber, upps�k l�kare", Toast.LENGTH_LONG).show();
 							break;
 						case 4:
 							hashMap.put("fever", "5");
 							dbTools.updateUserFever(hashMap);
-							Toast.makeText(getApplicationContext(), "Hög feber, uppsök läkare", Toast.LENGTH_LONG).show();
+							Toast.makeText(getApplicationContext(), "H�g feber, upps�k l�kare", Toast.LENGTH_LONG).show();
 							break;
 
 						default:
@@ -119,6 +121,7 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
 							Toast.makeText(getApplicationContext(), "Ingen feber registerad", Toast.LENGTH_LONG).show();
 							break;
 						}
+						updateDrinkingAmount();
 					}
 				});
 				
@@ -151,39 +154,14 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
     		}
     	});
     	
-    	
-    	
-    	btnClear.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				ArrayList<HashMap<String, String>> settings = dbTools.getUserSettings();
-				String msg = "";
-				if(settings.size() > 0){
-					int weight = Integer.parseInt(settings.get(0).get("weight"));
-					int fever = Integer.parseInt(settings.get(0).get("fever"));
-	//				if(settings.get(0).get("isMan").equals("true")){
-	//					//int result = ((weight * 30) + ((weight * 30)*(10/fever)));
-	//					//msg = "Kom ihåg att du bör dricka "+ Integer.toString(weight) + "ml";
-	//					//setMainMessage(msg);
-	//				}else{
-	//					//int result = ((weight * 30) + ((weight * 30)*(10/fever)));
-	//					//msg = "Kom ihåg att du bör dricka "+ Integer.toString(weight) + "ml idag";
-	//					//setMainMessage(msg);
-	//					//msg = "Kom ihåg att du bör dricka "+ ((weight * 30) + ((weight * 30)*(10/fever)));
-	//				}
-					if(fever > 0){
-						textview.setText("Kom ihång att dricka " + ((weight * 30) + (((weight*30)*fever)/10)) + "ml idag");
-					}else{
-						textview.setText("Kom ihång att dricka " + (weight * 30) + "ml idag");
-					}
-				}
-				else{
-					textview.setText("");
-				}
-			}
-		});
+//    	btnClear.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				// TODO Auto-generated method stub
+//				updateDrinkingAmount();
+//			}
+//		});
     	
     }
 
@@ -203,7 +181,7 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
     	String url = "http://api.openweathermap.org/data/2.1/find/city?lat=" + Double.toString(GPSLocation.getLatitude()) + "&lon=" + Double.toString(GPSLocation.getLongitude()) + "&cnt=1";
     	
     	new networkTask().execute(url);
-    	
+    	updateDrinkingAmount();
     }
     
     public void setMainMessage(String message)
@@ -254,7 +232,32 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
     }
     
     
-    
+    private void updateDrinkingAmount(){
+    	ArrayList<HashMap<String, String>> settings = dbTools.getUserSettings();
+		
+		if(settings.size() > 0){
+			int weight = Integer.parseInt(settings.get(0).get("weight"));
+			int fever = Integer.parseInt(settings.get(0).get("fever"));
+//				if(settings.get(0).get("isMan").equals("true")){
+//					//int result = ((weight * 30) + ((weight * 30)*(10/fever)));
+//					//msg = "Kom ihåg att du bör dricka "+ Integer.toString(weight) + "ml";
+//					//setMainMessage(msg);
+//				}else{
+//					//int result = ((weight * 30) + ((weight * 30)*(10/fever)));
+//					//msg = "Kom ihåg att du bör dricka "+ Integer.toString(weight) + "ml idag";
+//					//setMainMessage(msg);
+//					//msg = "Kom ihåg att du bör dricka "+ ((weight * 30) + ((weight * 30)*(10/fever)));
+//				}
+			if(fever > 0){
+				txtVM.setText("Kom ih�ng att dricka ungef�r " + ((weight * 30) + (((weight*30)*fever)/10)) + "ml idag");
+			}else{
+				txtVM.setText("Kom ih�ng att dricka ungef�r " + (weight * 30) + "ml idag");
+			}
+		}
+		else{
+			txtVM.setText("");
+		}
+    }
 }
 
 

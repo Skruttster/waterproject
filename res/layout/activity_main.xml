@@ -12,7 +12,7 @@
         android:id="@+id/txtVMessages"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_above="@+id/btnClear"
+        android:layout_above="@+id/btnSettings"
         android:layout_alignLeft="@+id/btn"
         android:layout_alignRight="@+id/btn"
         android:layout_below="@+id/btn"
@@ -39,15 +39,6 @@
         android:textSize="@dimen/font_size_btn" />
 
     <Button
-        android:id="@+id/btnClear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btnSettings"
-        android:layout_alignLeft="@+id/btnSettings"
-        android:text="@string/btnClearMessages"
-        android:textSize="@dimen/font_size_btn" />
-
-    <Button
         android:id="@+id/btnFever"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,5 +57,16 @@
         android:onClick="getLocation"
         android:text="@string/send_request"
         android:textSize="@dimen/font_size_btn" />
+
+    <TextView
+        android:id="@+id/textViewAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnSettings"
+        android:layout_alignLeft="@+id/txtVMessages"
+        android:layout_alignRight="@+id/txtVMessages"
+        android:layout_alignTop="@+id/txtVMessages"
+        android:layout_marginTop="31dp"
+        android:textSize="@dimen/font_size" />
 
 </RelativeLayout>

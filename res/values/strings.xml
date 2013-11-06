@@ -4,7 +4,7 @@
     <string name="app_name">Törstig?</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    <string name="send_request">Aktivera Alarm</string>
+    <string name="send_request">Uppdatera</string>
 
     <!-- Start page -->
     <!-- Button texts -->
