@@ -37,7 +37,7 @@ public class DBTools extends SQLiteOpenHelper{
 		
 		onCreate(db);
 	}
-	
+	//Creates a user
 	public void insertUser(HashMap<String, String>queryValues){
 		SQLiteDatabase db = getWritableDatabase();
 		ContentValues values = new ContentValues();
@@ -56,7 +56,7 @@ public class DBTools extends SQLiteOpenHelper{
 		db.insert("userMessages", null, values);
 		db.close();
 	}
-	
+	//updates the user information
 	public int updateUser(HashMap<String, String>queryValues){
 		SQLiteDatabase db = getWritableDatabase();
 		ContentValues values = new ContentValues();

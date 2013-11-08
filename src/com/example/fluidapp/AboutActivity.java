@@ -33,7 +33,7 @@ public class AboutActivity extends Activity {
 		btnCreatedBy = (Button)findViewById(R.id.btnCreatedBy);
 		btnMoreInfo = (Button)findViewById(R.id.bthMoreInfo);
 		
-		
+		//Displays a message about the purpose of the app
 		btnAboutApp.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -55,7 +55,7 @@ public class AboutActivity extends Activity {
 				alertDialog.show();
 			}
 		});
-		
+		//Displays a message on the screen telling the user about the creators of the app
 		btnCreatedBy.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -76,6 +76,7 @@ public class AboutActivity extends Activity {
 				alertDialog.show();
 			}
 		});
+		//Send the user to a web page about health
 		btnMoreInfo.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {

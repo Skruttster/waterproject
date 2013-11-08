@@ -73,6 +73,10 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
 
 
 //    	Knapptryckningar
+    	
+    	//This button sparks a dialogue allowing the user to let the system know that he or she has a fever
+    	//The amount of fever changes the amount of water the user should drink during that day
+    	//A high fever will trigger a toast telling the user to seek out a doctor
     	btnFever.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -130,25 +134,26 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
 				
 			}
 		});
+    	//Clicking this button will send you to the settings page
     	btnSettings.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent nextScreen = new Intent(getApplicationContext(), SettingsActivity.class);
-				
+				Intent nextScreen = new Intent(getApplicationContext(), SettingsActivity.class);				
 				startActivity(nextScreen);
 				 
 			}
 		});
     	
+    	
+    	//Clicking this button will redirect us to another page. On that page We have stored some more information
     	btnInfo.setOnClickListener(new OnClickListener() {
     		
     		@Override
     		public void onClick(View v) {
     			// TODO Auto-generated method stub
     			Intent nextScreen = new Intent(getApplicationContext(), AboutActivity.class);
-    			
     			startActivity(nextScreen);
     			
     		}
@@ -231,7 +236,8 @@ private static final String NEW_MESSAGES = "NEW_MESSAGES";
     	
     }
     
-    
+    //Metoden uppdaterar textfältet på startsidan med hur mycket man bör dricka den dagen
+    //metoden kallas när man trycker uppdatera och när man trycker på feberknappen
     private void updateDrinkingAmount(){
     	ArrayList<HashMap<String, String>> settings = dbTools.getUserSettings();
 		

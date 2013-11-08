@@ -22,6 +22,10 @@ import android.os.Build;
 
 public class SettingsActivity extends Activity {
 
+	/*
+	 * This is the page where the user can alter his or her settings
+	 * Settings such as gender, weight and if he or she is meant to drink extra water
+	 */
 	Intent intent;
 	
 	RadioGroup rbGroup;
@@ -46,6 +50,9 @@ public class SettingsActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_settings);
+		
+		//Fetching data from the database about the user, if there is any
+		//Puts that data into the form
 		ArrayList<HashMap<String, String>> userSessings = dbTools.getUserSettings();
 		
 		rbGroup = (RadioGroup)findViewById(R.id.radioGroup1);
